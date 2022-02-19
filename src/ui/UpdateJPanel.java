@@ -256,7 +256,7 @@ public class UpdateJPanel extends javax.swing.JPanel {
         this.uberFleet.updateCar(c, serialNumber);
         JOptionPane.showMessageDialog(this, "Car Updated In Uber Fleet");
          
-        } catch (ParseException ex) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Invalid Field");
         }
         

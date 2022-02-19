@@ -222,13 +222,13 @@ public class CreateJPanel extends javax.swing.JPanel {
         String serialNumber = this.serialNumberTxt.getText();
         String modelNumber = this.modelNumberTxt.getText();
         String geoLocality = this.operatingCity.getText();
-        Date maintenaceExpiry = new Date();
+        Date maintenaceExpiry = new SimpleDateFormat("mm/dd/yyyy").parse(this.maintenanceExpiryDate.getText());
         
-        maintenaceExpiry = new SimpleDateFormat("mm/dd/yyyy").parse(this.maintenanceExpiryDate.getText());
+        
         Car c = new Car(available, manufacturer, manufacturedYear, seats, serialNumber,modelNumber, geoLocality,maintenaceExpiry);
         this.fleet.addCarToFleet(c);
         JOptionPane.showMessageDialog(this, "Car Added to Uber Fleet");
-        } catch (ParseException ex) {
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Invalid Field");
         }
         
